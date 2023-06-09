@@ -1,13 +1,15 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { useForm } from "react-hook-form";
 import Swal from 'sweetalert2';
 import { AuthContext } from '../../AuthProvider';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import loginimg from '../../assets/cd6a2b40e53ebc601cf870bc1e89506e.jpg'
 import SocialLogin from '../../Shared/SocialLogin/SocialLogin';
+import { FaEyeSlash, FaRegEye } from 'react-icons/fa';
 
 
 const Login = () => {
+    const [show, setShow] = useState(false)
     const { signIn } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
@@ -55,11 +57,20 @@ const Login = () => {
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input type="password"  {...register("password", {
+                                <input type={show ? "text" : "password"} {...register("password", {
                                     required: true,
                                     minLength: 6,
                                     pattern: /(?=.*[A-Z])(?=.*[!@#$&*])/
                                 })} placeholder="password" className="input input-bordered" />
+                                <p onClick={() => setShow(!show)}>
+                                    <small>
+                                        {
+                                            show ? <span className='ml-4 mt-2 text-blue-700'><FaRegEye></FaRegEye></span> : <span className='ml-4 mt-2 text-blue-700'><FaEyeSlash></FaEyeSlash></span>
+
+                                        }
+
+                                    </small>
+                                </p>
                                 {errors.password?.type === 'required' && <p className="text-red-600">Password is required</p>}
                                 {errors.password?.type === 'minLength' && <p className="text-red-600">Password must be 6 characters</p>}
                                 {errors.password?.type === 'pattern' && <p className="text-red-600">Password must have one Uppercase,One Special Character</p>}
