@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import img from "../../assets/registration-hand-pressing-button-interface-blue-background-49410297.webp"
 import Swal from 'sweetalert2';
 import { AuthContext } from '../../AuthProvider';
+import SocialLogin from '../../Shared/SocialLogin/SocialLogin';
 
 
    
@@ -23,7 +24,7 @@ const Register = () => {
                 updateUserProfile(data.name, data.photoURL)
                     .then(() => {
                         const saveUser = { name: data.name, email: data.email }
-                        fetch('https://bistro-boss-server-fawn.vercel.app/users', {
+                        fetch('http://localhost:5000/users', {
                             method: 'POST',
                             headers: {
                                 'content-type': 'application/json'
@@ -99,6 +100,7 @@ const Register = () => {
                             <div className="form-control mt-6">
                                 <input className="btn bg-fuchsia-600 text-white" type="submit" value="Register" />
                             </div>
+                            <SocialLogin></SocialLogin>
                         </form>
                         <p className='mb-6'><small className='text-blue-900 pl-8 '>Already have an account?? <button className='bg-fuchsia-500 text-white px-4 py-1 rounded-2xl'><Link to="/login">Login</Link></button></small></p>
                     </div>

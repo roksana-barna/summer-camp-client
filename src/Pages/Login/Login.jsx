@@ -4,6 +4,7 @@ import Swal from 'sweetalert2';
 import { AuthContext } from '../../AuthProvider';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import loginimg from '../../assets/cd6a2b40e53ebc601cf870bc1e89506e.jpg'
+import SocialLogin from '../../Shared/SocialLogin/SocialLogin';
 
 
 const Login = () => {
@@ -21,18 +22,18 @@ const Login = () => {
 
                 const loggedUser = result.user;
                 console.log(loggedUser);
-                    Swal.fire({
-                        position: 'top-end',
-                        icon: 'success',
-                        title: 'User created successfully.',
-                        showConfirmButton: false,
-                        timer: 1500
-                    });
-                    navigate(from, { replace: true });
-                
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'User created successfully.',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+                navigate(from, { replace: true });
+
 
             })
-        }
+    }
     return (
         <>
             <div className="hero min-h-screen bg-base-200 ">
@@ -62,12 +63,13 @@ const Login = () => {
                                 {errors.password?.type === 'required' && <p className="text-red-600">Password is required</p>}
                                 {errors.password?.type === 'minLength' && <p className="text-red-600">Password must be 6 characters</p>}
                                 {errors.password?.type === 'pattern' && <p className="text-red-600">Password must have one Uppercase,One Special Character</p>}
-                              
+
                             </div>
 
                             <div className="form-control mt-6">
                                 <input className="btn bg-fuchsia-600 text-white" type="submit" value="Login" />
                             </div>
+                            <SocialLogin></SocialLogin>
                         </form>
                         <p className='mb-6'><small className='text-blue-900 pl-8'>New to Smooth Moves??Please <button className='bg-fuchsia-500 text-white px-4 py-1 rounded-2xl'><Link to="/register">Register</Link></button></small></p>
                     </div>
