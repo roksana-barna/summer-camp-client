@@ -13,6 +13,11 @@ import ManageClass from "../Layout/Dashboard/AdminDashboard/ManageClass";
 import ManageUser from "../Layout/Dashboard/AdminDashboard/ManageUser";
 import MySelectedClass from "../Layout/Dashboard/StudentsBoard/MySelectedClass";
 import MyEnrolledClass from "../Layout/Dashboard/StudentsBoard/MyEnrolledClass";
+import AddClass from "../Layout/Dashboard/InstructorBoard/AddClass";
+import InstructorRoute from "./InstructorRoute";
+import AdminRoute from "./AdminRoute";
+import StudentsRole from "../Layout/Dashboard/StudentsBoard/StudentsRole";
+// import InstructorRoute from "./InstructorRoute";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -41,15 +46,15 @@ const router = createBrowserRouter([
   {
 
     path: 'dashboard',
-    element: <Dashboard></Dashboard>,
+    element: <PrivateRoute><Dashboard></Dashboard>,</PrivateRoute>,
     children: [
       {
         path: 'manageclass',
-        element: <ManageClass></ManageClass>
+        element:<AdminRoute> <ManageClass></ManageClass></AdminRoute>
       },
       {
         path: 'manageuser',
-        element: <ManageUser></ManageUser>
+        element: <AdminRoute><ManageUser></ManageUser></AdminRoute>
       },
       {
         path: 'myselectedclass',
@@ -58,7 +63,18 @@ const router = createBrowserRouter([
       {
         path: 'myenrolledclass',
         element: <MyEnrolledClass></MyEnrolledClass>
+      },
+      {
+        path: 'addaclass',
+        element: <InstructorRoute><AddClass></AddClass></InstructorRoute>
+      },
+      {
+        path: 'studentrole',
+        element: <StudentsRole></StudentsRole>
       }
+     
+     
+       
 
     ]
   }
