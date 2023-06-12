@@ -32,20 +32,18 @@ const Classes = () => {
         }
         console.log(selectedClass)
         axiosSecure.post('/enrolled', selectedClass)
-      .then(data => {
-        console.log('after posting new  item', data.data)
-        if (data.data.insertedId) {
-          Swal.fire({
-            position: 'top-end',
-            icon: 'success',
-            title: 'Item added successfully',
-            showConfirmButton: false,
-            timer: 1500
-          })
-        }
-      })
-
-
+            .then(data => {
+                console.log('after posting new  item', data.data)
+                if (data.data.insertedId) {
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Item added successfully',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                }
+            })
         if (!isLoggedIn()) {
             alert('Please log in before selecting the course.');
             return;
@@ -56,7 +54,6 @@ const Classes = () => {
             return;
         }
 
-        // Handle course selection logic here
         console.log('Selected course:', course);
     };
 
@@ -78,8 +75,6 @@ const Classes = () => {
                 >
                 </CourseCard>)
             }
-
-
         </div>
     )
 
