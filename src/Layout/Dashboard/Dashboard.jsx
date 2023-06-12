@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaHome, FaPeopleArrows } from 'react-icons/fa';
+import { FaClipboard, FaHome, FaPeopleArrows,FaOdnoklassniki,FaDesktop,FaCheck,FaFan } from 'react-icons/fa';
 import { NavLink, Outlet } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import useAdmin from '../../Hooks/useAdmin';
@@ -33,8 +33,8 @@ const Dashboard = () => {
                             isAdmin &&
                             <>
                                 <li><NavLink  to='/dashboard/studentrole' className='bg-red-400 text-center text-white'>Admin Home</NavLink></li>
-                                <li><NavLink to='/dashboard/manageclass' className='text-cyan-800 text-lg  bg-transparent hover:bg-red-400'>Manage Classes</NavLink></li>
-                                <li><NavLink to='/dashboard/manageuser' className='text-cyan-800 text-lg bg-transparent hover:bg-red-400 '>Manage Users</NavLink></li>
+                                <li><NavLink to='/dashboard/manageclass' className='text-cyan-800 text-lg  bg-transparent hover:bg-red-400'><FaDesktop></FaDesktop>Manage Classes</NavLink></li>
+                                <li><NavLink to='/dashboard/manageuser' className='text-cyan-800 text-lg bg-transparent hover:bg-red-400 '><FaOdnoklassniki></FaOdnoklassniki>Manage Users</NavLink></li>
                             </>
 
                         }
@@ -42,8 +42,8 @@ const Dashboard = () => {
                            isStudent &&  
                             <>
                             <li><NavLink className='bg-red-400 text-center text-white'>Students Home</NavLink></li>
-                            <li><NavLink to='/dashboard/myselectedclass' className='text-cyan-800 text-lg  bg-transparent hover:bg-red-400'>My Selected Classes</NavLink></li>
-                            <li><NavLink to='/dashboard/myenrolledclass' className='text-cyan-800 text-lg bg-transparent hover:bg-red-400 '>My Enrolled Classes</NavLink></li>
+                            <li><NavLink to='/dashboard/myselectedclass' className='text-cyan-800 text-lg  bg-transparent hover:bg-red-400'><FaCheck></FaCheck>My Selected Classes</NavLink></li>
+                            <li><NavLink to='/dashboard/myenrolledclass' className='text-cyan-800 text-lg bg-transparent hover:bg-red-400 '><FaFan></FaFan>My Enrolled Classes</NavLink></li>
 
                         </>
                         }
@@ -52,8 +52,8 @@ const Dashboard = () => {
                             isInstructor &&
                             <>
                                 <li><NavLink   className='bg-red-400 text-center text-white'>Instructor Home</NavLink></li>
-                                <li><NavLink to='/dashboard/addaclass' className='text-cyan-800 text-lg  bg-transparent hover:bg-red-400'>Add a Class</NavLink></li>
-                                <li><NavLink to='/dashboard/myclasses' className='text-cyan-800 text-lg bg-transparent hover:bg-red-400 '>My Classes</NavLink></li>
+                                <li><NavLink to='/dashboard/addaclass' className='text-cyan-800 text-lg  bg-transparent hover:bg-red-400'><FaClipboard></FaClipboard>Add a Class</NavLink></li>
+                                <li><NavLink to='/dashboard/myclasses' className='text-cyan-800 text-lg bg-transparent hover:bg-red-400 '><FaPeopleArrows></FaPeopleArrows>My Classes</NavLink></li>
                             </>
                         }
                         <div className="divider"></div>
