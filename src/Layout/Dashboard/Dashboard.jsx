@@ -58,7 +58,7 @@ const Dashboard = () => {
                         }
                         <div className="divider"></div>
                         <li><NavLink to="/"><FaHome></FaHome> Home</NavLink> </li>
-                        <li><NavLink to="/classes"><FaPeopleArrows></FaPeopleArrows>Classes</NavLink></li>
+                        <li><NavLink to="/classespage"><FaPeopleArrows></FaPeopleArrows>Classes</NavLink></li>
                     </ul>
                 </div>
             </div>

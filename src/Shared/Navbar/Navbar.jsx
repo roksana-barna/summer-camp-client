@@ -13,7 +13,7 @@ const Navbar = () => {
     const navItems = <>
         <li><Link to="/" className='text-xl text-white font-semibold'>Home</Link></li>
         <li><Link to="/instructors" className='text-xl text-white font-semibold'>Instructors</Link></li>
-        <li><Link to="/classes" className='text-xl text-white font-semibold'>Classes</Link></li>
+        <li><Link to="/classespage" className='text-xl text-white font-semibold'>Classes</Link></li>
         <li><Link to="/dashboard" className='text-xl text-white font-semibold'>DashBoard</Link></li>
         {
             user ? <>

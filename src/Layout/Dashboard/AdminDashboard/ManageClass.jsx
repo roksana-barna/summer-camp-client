@@ -6,16 +6,13 @@ import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
 
 const ManageClass = () => {
-    const [showModal, setShowModal] = useState(false);
-
-
     const [axiosSecure] = useAxiosSecure();
     const { data: classes = [], refetch } = useQuery(['classes'], async () => {
-        const res = await axiosSecure.get('/classes')
+        const res = await axiosSecure.get('/class')
         return res.data;
     })
     const handleMakeApproved = cls => {
-        fetch(`http://localhost:5000/users/approved/${cls._id}`, {
+        fetch(`http://localhost:5000/class/approved/${cls._id}`, {
             method: 'PATCH'
         })
             .then(res => res.json())
@@ -34,7 +31,7 @@ const ManageClass = () => {
             })
     }
     const handleMakeDenied = cls => {
-        fetch(`http://localhost:5000/users/denied/${cls._id}`, {
+        fetch(`http://localhost:5000/class/denied/${cls._id}`, {
             method: 'PATCH'
         })
             .then(res => res.json())
