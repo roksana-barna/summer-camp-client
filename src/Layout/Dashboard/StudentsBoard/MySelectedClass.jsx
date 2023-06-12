@@ -2,13 +2,46 @@ import React from 'react';
 import useAxiosSecure from '../../../Hooks/useAxiosSecure';
 import { Helmet } from 'react-helmet-async';
 import { useQuery } from '@tanstack/react-query';
+import Swal from 'sweetalert2';
 
 const MySelectedClass = () => {
     const [axiosSecure] = useAxiosSecure();
     const { data: enrolled = [], refetch } = useQuery(['enrolled'], async () => {
         const res = await axiosSecure.get('/enrolled')
         return res.data;
+    
     })
+        
+    const handleDelete = cls=> {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        })
+        .then((result) => {
+            if (result.isConfirmed) {
+
+                axiosSecure.delete(`/enrolled/${cls._id}`)
+                    .then(res => {
+                        console.log('deleted res', res.data);
+                        if (res.data.deletedCount > 0) {
+                            refetch();
+                            Swal.fire(
+                                'Deleted!',
+                                'Your file has been deleted.',
+                                'success'
+                            )
+                        }
+                    })
+
+            }
+        })
+    }
+    
     return (
         <div className="w-full">
 
@@ -41,7 +74,7 @@ const MySelectedClass = () => {
                                 </td>
                                 <td>${cls.price}</td>
                                 <td>
-                                    <button className=' bg-red-500 px-2 py-2 text-white'>Delete</button>
+                                    <button onClick={()=>handleDelete(cls)} className=' bg-red-500 px-2 py-2 text-white'>Delete</button>
                                 </td>
                                 <td>
                                     <button className='bg-fuchsia-600 text-white px-2 py-2 rounded-xl'>Pay</button>
