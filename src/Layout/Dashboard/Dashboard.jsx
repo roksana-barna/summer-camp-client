@@ -7,7 +7,6 @@ import useInstructor from '../../Hooks/useInstructor';
 import useAuth from '../../Hooks/useAuth';
 import useStudent from '../../Hooks/useStudent';
 
-
 const Dashboard = () => {
     const [isAdmin] = useAdmin();
 
@@ -29,8 +28,7 @@ const Dashboard = () => {
                 </div>
                 <div className="drawer-side bg-orange-200">
                     <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-                    <ul className="menu p-4 w-80 h-full bg-orange-200 text-base-content">
-                        {/* Sidebar content here */}
+                    <ul className="menu p-4 w-60 h-full bg-orange-200 text-base-content">
                         {
                             isAdmin &&
                             <>
@@ -55,14 +53,9 @@ const Dashboard = () => {
                             <>
                                 <li><NavLink   className='bg-red-400 text-center text-white'>Instructor Home</NavLink></li>
                                 <li><NavLink to='/dashboard/addaclass' className='text-cyan-800 text-lg  bg-transparent hover:bg-red-400'>Add a Class</NavLink></li>
-                                <li><NavLink to='/dashboard/myclass' className='text-cyan-800 text-lg bg-transparent hover:bg-red-400 '>My Classes</NavLink></li>
-                                <li><NavLink to='/dashboard/totalclass' className='text-cyan-800 text-lg bg-transparent hover:bg-red-400 '>Total Enrolled Class</NavLink></li>
-                                <li><NavLink to='/dashboard/feedback' className='text-cyan-800 text-lg bg-transparent hover:bg-red-400 '>FeedBack</NavLink></li>
-
+                                <li><NavLink to='/dashboard/myclasses' className='text-cyan-800 text-lg bg-transparent hover:bg-red-400 '>My Classes</NavLink></li>
                             </>
-
                         }
-
                         <div className="divider"></div>
                         <li><NavLink to="/"><FaHome></FaHome> Home</NavLink> </li>
                         <li><NavLink to="/classes"><FaPeopleArrows></FaPeopleArrows>Classes</NavLink></li>
