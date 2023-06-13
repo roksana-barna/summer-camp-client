@@ -21,6 +21,7 @@ import FeedBack from "../Layout/Dashboard/AdminDashboard/FeedBack";
 import MyClasses from "../Layout/Dashboard/InstructorBoard/MyClasses";
 import Instructor from "./Home/Instructor";
 import Classes from "./Home/Classes";
+// import Payment from "./Payment";
 // import InstructorRoute from "./InstructorRoute";
 const router = createBrowserRouter([
   {
@@ -92,6 +93,10 @@ const router = createBrowserRouter([
         path: 'feedback',
         element: <FeedBack></FeedBack>
       },
+      // {
+      //   path: 'payment',
+      //   element: <Payment></Payment>
+      // },
      
      
      

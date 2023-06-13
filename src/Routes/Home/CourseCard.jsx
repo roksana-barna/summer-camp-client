@@ -1,5 +1,6 @@
 import React from 'react';
 import useAuth from '../../Hooks/useAuth';
+import { Link } from 'react-router-dom';
 
 const CourseCard = ({ course, handleSelect, isLoggedIn }) => {
   const { name, photoURL, price, seats, instructor } = course;
@@ -11,12 +12,12 @@ const CourseCard = ({ course, handleSelect, isLoggedIn }) => {
       <div className="card-body ">
         <h2 className="card-title"><p>Class Name:{name}</p></h2>
         <p> Instructor Name:{instructor}</p>
-        <p>Available Seats{seats}</p>
+        <p>Available Seats:{seats}</p>
         <p>Price:${price}</p>
 
 
         <div className="card-actions justify-center bg-pink-200 rounded-xl px-3 py-1 text-slate-800">
-          <button
+          <button 
             onClick={() => handleSelect(course)}
             disabled={seats === 0 || !user}
           >

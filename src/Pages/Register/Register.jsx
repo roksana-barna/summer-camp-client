@@ -6,7 +6,11 @@ import Swal from 'sweetalert2';
 import { AuthContext } from '../../AuthProvider';
 import SocialLogin from '../../Shared/SocialLogin/SocialLogin';
 const Register = () => {
-    const { register, handleSubmit, reset, formState: { errors } } = useForm();
+    const { register, handleSubmit, reset, formState: { errors } } = useForm({
+        defaultValues:{
+            role:'student'
+        }
+    });
     const { createUser, updateUserProfile } = useContext(AuthContext);
     const navigate = useNavigate();
     const onSubmit = data => {
@@ -19,7 +23,7 @@ const Register = () => {
 
                 updateUserProfile(data.name, data.photoURL)
                     .then(() => {
-                        const saveUser = { name: data.name, email: data.email,photoURL:data.photoURL }
+                        const saveUser = { name: data.name, email: data.email,photoURL:data.photoURL,role:'student' }
                         fetch('http://localhost:5000/users', {
                             method: 'POST',
                             headers: {

@@ -28,6 +28,8 @@ const Classes = () => {
             price: course?.price,
             photoURL: course?.photoURL,
             instructor: course?.instructor,
+            seats:course?.seats
+
 
         }
         console.log(selectedClass)
@@ -67,7 +69,7 @@ const Classes = () => {
         <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-6'>
             {courses.map(course =>
                 <CourseCard
-                    key={course.id}
+                    key={course._id}
                     style={{ backgroundColor: course.availableSeats === 0 ? 'red' : 'white' }}
                     course={course}
                     handleSelect={handleSelect}

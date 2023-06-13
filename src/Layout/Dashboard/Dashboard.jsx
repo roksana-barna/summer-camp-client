@@ -32,7 +32,7 @@ const Dashboard = () => {
                         {
                             isAdmin &&
                             <>
-                                <li><NavLink  to='/dashboard/studentrole' className='bg-red-400 text-center text-white'>Admin Home</NavLink></li>
+                                <li><NavLink to='/dashboard/studentrole' className='bg-red-400 text-center text-white'>Admin Home</NavLink></li>
                                 <li><NavLink to='/dashboard/manageclass' className='text-cyan-800 text-lg  bg-transparent hover:bg-red-400'><FaDesktop></FaDesktop>Manage Classes</NavLink></li>
                                 <li><NavLink to='/dashboard/manageuser' className='text-cyan-800 text-lg bg-transparent hover:bg-red-400 '><FaOdnoklassniki></FaOdnoklassniki>Manage Users</NavLink></li>
                             </>
