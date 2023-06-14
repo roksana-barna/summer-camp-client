@@ -1,5 +1,7 @@
 import React from 'react';
 import img from '../../assets/c1.jpg';
+import { Bounce, Fade, Rotate, Slide } from "react-awesome-reveal";
+
 
 const NewSection = () => {
     return (
@@ -14,15 +16,22 @@ const NewSection = () => {
                 <div>
                     <div className='mt-56'>
                         <div className="chat chat-start">
-                            <div className=" chat-bubble text-white chat-bubble-success">Our Victory <br />ChampionShip Dance </div>
+                            <Slide>
+                                <div className=" chat-bubble text-white chat-bubble-success">Our Victory <br />ChampionShip Dance </div>
+
+                            </Slide>
                         </div>
                         <div className="chat chat-end">
-                            <div className="chat-bubble chat-bubble-secondary">Cum sociis natoque penatibus et magnis dis parturient ntesmus!</div>
+                            <Fade delay={1e3} cascade damping={1e-1}>
+                                <div className="chat-bubble chat-bubble-secondary">Cum sociis natoque penatibus et magnis dis parturient ntesmus!</div>
+
+                            </Fade>
 
                         </div>
 
 
                     </div>
+                    <Rotate>
                     <div className="flex flex-col mt-32">
                         <div className="form-control w-52">
                             <label className="cursor-pointer label">
@@ -45,7 +54,9 @@ const NewSection = () => {
                                 <input type="checkbox" className="toggle toggle-accent" checked />
                             </label>
                         </div>
+                        
                     </div>
+                    </Rotate>
                 </div>
             </div>
         </div>
