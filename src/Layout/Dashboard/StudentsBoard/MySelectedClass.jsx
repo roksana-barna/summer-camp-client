@@ -25,6 +25,9 @@ const MySelectedClass = () => {
             })
         },[email]);
 
+
+       
+
     const handleDelete = cls => {
         Swal.fire({
             title: 'Are you sure?',

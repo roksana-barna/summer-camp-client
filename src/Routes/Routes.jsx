@@ -22,6 +22,7 @@ import MyClasses from "../Layout/Dashboard/InstructorBoard/MyClasses";
 import Instructor from "./Home/Instructor";
 import Classes from "./Home/Classes";
 import Payment from "./Payment";
+import StudentRoute from "./StudentRoute";
 // import InstructorRoute from "./InstructorRoute";
 const router = createBrowserRouter([
   {
@@ -71,11 +72,11 @@ const router = createBrowserRouter([
       },
       {
         path: 'myselectedclass',
-        element: <MySelectedClass></MySelectedClass>
+        element: <StudentRoute><MySelectedClass></MySelectedClass></StudentRoute>
       },
       {
         path: 'myenrolledclass',
-        element: <MyEnrolledClass></MyEnrolledClass>
+        element: <StudentRoute><MyEnrolledClass></MyEnrolledClass></StudentRoute>
       },
       {
         path: 'addaclass',

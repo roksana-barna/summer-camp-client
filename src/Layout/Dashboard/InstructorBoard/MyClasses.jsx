@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import useAxiosSecure from '../../../Hooks/useAxiosSecure';
 import { useQuery } from '@tanstack/react-query';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
+import useAuth from '../../../Hooks/useAuth';
 
 const MyClasses = () => {
     const [axiosSecure] = useAxiosSecure();
@@ -10,6 +11,15 @@ const MyClasses = () => {
         const res = await axiosSecure.get('/classes')
         return res.data;
     })
+    const [feedback, setFeedBack] = useState([])
+    useEffect(() => {
+        fetch('http://localhost:5000/feedback')
+            .then(res => res.json())
+            .then(data => {
+                setFeedBack(data)
+                console.log(data)
+            })
+    }, []);
     return (
         <div className="w-full">
             <Helmet>
@@ -45,13 +55,15 @@ const MyClasses = () => {
                                 <td>${cls.price}</td>
                                 <td>{cls.status}</td>
                                 <td>
-                                    <button>{}</button>
+                                    <button>{ }</button>
                                 </td>
                                 <td>
-                                    feedback
+                                    {
+                                        feedback.map(feed => <li key={feed._id}>{feed.feedback}</li>)
+                                    }
                                 </td>
                                 <td>
-                                    update
+                                    <button className='px-2 py-1 bg-sky-300 text-white'>update</button>
                                 </td>
                             </tr>)
 
