@@ -80,7 +80,8 @@ const MySelectedClass = () => {
                     </thead>
                     <tbody>
                         {
-                            enrolleds?.map((cls) => <tr key={cls._id}>
+                            enrolleds?.map((cls) => <tr key={cls._id}
+                                     >
                         
                                 <td><img className='h-8 w-8 rounded-xl' src={cls.photoURL} alt="" /></td>
                                 <td>{cls.className}</td>
@@ -89,6 +90,7 @@ const MySelectedClass = () => {
                                 </td>
                                 <td>${cls.price}</td>
                                 <td>{cls.seats}</td>
+
                                 <td>
                                     <button onClick={() => handleDelete(cls)} className=' bg-red-500 px-2 py-2 text-white'>Delete</button>
                                 </td>

@@ -13,8 +13,8 @@ const AddClass = () => {
 
     console.log(data)
   
-    const { name, price, email, seats, instructor, photoURL } = data;
-    const newItem = { name, price: parseFloat(price), photoURL, instructor, email, seats: parseFloat(seats), status: 'pending' }
+    const { name, price, email, seats,students, instructor, photoURL } = data;
+    const newItem = { name, price: parseFloat(price), photoURL, instructor,students, email, seats: parseFloat(seats), status: 'pending' }
     console.log(newItem)
     axiosSecure.post('/classes', newItem)
       .then(data => {
@@ -87,6 +87,12 @@ return (
           <span className="label-text font-semibold">Avaiable Seats</span>
         </label>
         <input type="number" {...register("seats", { required: true })} placeholder="seats" className="input input-bordered w-full " />
+      </div>
+      <div className="form-control w-full ml-4">
+        <label className="label">
+          <span className="label-text font-semibold">number of students</span>
+        </label>
+        <input type="number" {...register("students", { required: true })} placeholder="students" className="input input-bordered w-full " />
       </div>
 
 
