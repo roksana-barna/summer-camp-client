@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import { useEffect } from "react";
 import { useState } from "react";
@@ -87,7 +88,8 @@ const CheckoutForm = ({classes, price }) => {
                 // classNumber:data._id,
                 menuItems: classes.map(item => item.menuItemId),
                 status: 'service pending',
-                itemNames: classes.map(item => item.name)
+                itemNames: classes.map(item => item.name),
+                seats:classes.map(item=>item.seats)
             }
             axiosSecure.post('/payments', payment)
                 .then(res => {
@@ -95,7 +97,9 @@ const CheckoutForm = ({classes, price }) => {
                     if (res.data.result.insertedId) {
                         // display confirm
                     }
-                })
+                }).catch((err)=>{
+                    console.log(err)
+                });
         }
 
 

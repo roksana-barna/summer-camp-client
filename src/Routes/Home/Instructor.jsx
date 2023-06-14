@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import InstructorCard from './InstructorCard';
+import PopularInsCard from './PopularInsCard';
 
 const Instructor = () => {
     const [ins, setIns] = useState([]);
@@ -17,6 +18,7 @@ const Instructor = () => {
                 ins?.map(instruct=><InstructorCard
                     key={instruct._id}
                     instruct={instruct}
+
                     >
                 </InstructorCard>)
             }
