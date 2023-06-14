@@ -12,7 +12,7 @@ const Classes = () => {
 
     useEffect(() => {
         // Fetch the course data from the server
-        fetch('http://localhost:5000/classes')
+        fetch('https://b7a12-summer-camp-server-side-roksana-barna.vercel.app/classes')
             .then(response => response.json())
             .then(data => setCourses(data))
             .catch(error => console.log(error));

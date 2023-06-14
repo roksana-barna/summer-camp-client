@@ -17,7 +17,7 @@ const MySelectedClass = () => {
     // })
     const [enrolleds, setEnrolleds] = useState([])
     useEffect(() => {
-        fetch(`http://localhost:5000/enrolled/selected/${email}`)
+        fetch(`https://b7a12-summer-camp-server-side-roksana-barna.vercel.app/enrolled/selected/${email}`)
             .then(res => res.json())
             .then(data => {
                 setEnrolleds(data)

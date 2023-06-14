@@ -10,7 +10,7 @@ const StudentsRole = () => {
         return res.data;
     })
     const handleMakeStudents = user => {
-        fetch(`http://localhost:5000/users/student/${user._id}`, {
+        fetch(`https://b7a12-summer-camp-server-side-roksana-barna.vercel.app/users/student/${user._id}`, {
             method: 'PATCH'
         })
             .then(res => res.json())

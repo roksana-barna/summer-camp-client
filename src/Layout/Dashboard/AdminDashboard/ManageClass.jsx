@@ -12,7 +12,7 @@ const ManageClass = () => {
         return res.data;
     })
     const handleMakeApproved = cls => {
-        fetch(`http://localhost:5000/class/approved/${cls._id}`, {
+        fetch(`https://b7a12-summer-camp-server-side-roksana-barna.vercel.app/class/approved/${cls._id}`, {
             method: 'PATCH'
         })
             .then(res => res.json())
@@ -31,7 +31,7 @@ const ManageClass = () => {
             })
     }
     const handleMakeDenied = cls => {
-        fetch(`http://localhost:5000/class/denied/${cls._id}`, {
+        fetch(`https://b7a12-summer-camp-server-side-roksana-barna.vercel.app/class/denied/${cls._id}`, {
             method: 'PATCH'
         })
             .then(res => res.json())

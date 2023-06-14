@@ -9,7 +9,7 @@ const  FeedBack =()=>{
     // Send the feedback to the instructor (example using fetch API)
     const data = { status, feedback };
 
-    fetch('http://localhost:5000/feedback', {
+    fetch('https://b7a12-summer-camp-server-side-roksana-barna.vercel.app/feedback', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
