@@ -7,8 +7,8 @@ const Popular = () => {
     console.log(classes)
     return (
       <div>
-        <h2 className='text-2xl text-sky-400 font-bold text-center my-8'>Popular Class</h2>
-        <p className='text-xl text-sky-800 font-bold text-center my-4'>Create your best Beat</p>
+        <h2 className='text-4xl mt-10 text-red-400  font-semibold  text-center'>Popular Class</h2>
+        <p className='text-2xl font-serif text-sky-300 text-center mt-2'>Create your best Beat</p>
           <div className='grid grid-cols-1 md:grid-cols-3'>
             {
                 classes.map(popular=><PopularCard

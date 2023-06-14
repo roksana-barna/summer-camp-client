@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import Slider from './Slider/SliderPic';
 import Popular from './Popular';
 import PopularIns from './PopularIns';
+import NewSection from './NewSection';
 
 const Home = () => {
     return (
@@ -12,6 +13,7 @@ const Home = () => {
             </Helmet>
             <Slider></Slider>
             <Popular></Popular>
+            <NewSection></NewSection>
             <PopularIns></PopularIns>
         </div>
     );

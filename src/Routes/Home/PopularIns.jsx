@@ -16,9 +16,9 @@ const PopularIns = () => {
     }, []);
     return (
         <div>
-            <h2 className='text-2xl text-sky-400 font-bold text-center mt-8'> Our Popular Instructor</h2>
+            <h2 className='text-2xl text-sky-400 font-bold text-center mt-8 '> Our Popular Instructor</h2>
         <p className='text-xl text-sky-800 font-bold text-center my-2'>Be the HighLight With Beat...</p>
-            <div className='grid grid-cols-1 md:grid-cols-3 gap-6 mt-10'>
+            <div className='grid grid-cols-1 md:grid-cols-3 gap-6 mt-10 mb-10'>
             {
                 inst?.map(ins=><PopularInsCard
                     key={ins._id}
