@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import useClass from '../../Hooks/useClass';
-import PopularCard from './PopularCard';
 import PopularInsCard from './PopularInsCard';
 
 const PopularIns = () => {

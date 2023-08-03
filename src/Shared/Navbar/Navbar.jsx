@@ -14,7 +14,10 @@ const Navbar = () => {
         <li><Link to="/" className='text-xl text-white font-semibold'>Home</Link></li>
         <li><Link to="/instructors" className='text-xl text-white font-semibold'>Instructors</Link></li>
         <li><Link to="/classespage" className='text-xl text-white font-semibold'>Classes</Link></li>
-        <li><Link to="/dashboard" className='text-xl text-white font-semibold'>DashBoard</Link></li>
+     {
+        user &&  <li><Link to="/dashboard" className='text-xl text-white font-semibold'>DashBoard</Link></li>
+
+     }
         {
             user ? <>
                 <img className='w-10 h-10 rounded-2xl ml-56' src={user.photoURL} alt="" />
